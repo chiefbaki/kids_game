@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                         radius: 30,
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage(
-                          Images.avatar,
+                          Images.boy,
                         ))
                   ],
                 ),

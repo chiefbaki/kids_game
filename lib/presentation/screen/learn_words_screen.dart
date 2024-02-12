@@ -29,6 +29,8 @@ class LearnWordsScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 100),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
                   onPressed: () {},

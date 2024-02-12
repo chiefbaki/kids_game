@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/presentation/screen/learn_words_screen.dart';
 import 'package:kids_game/presentation/widgets/number_card.dart';
 import 'package:kids_game/presentation/widgets/work_card.dart';
 import 'package:kids_game/presentation/widgets/fruits_card.dart';
@@ -54,32 +55,38 @@ class WordsScreen extends StatelessWidget {
                         radius: 30,
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage(
-                          Images.avatar,
+                          Images.boy,
                         ))
                   ],
                 ),
                 const SizedBox(
                   height: 39,
                 ),
-                const Expanded(
+                Expanded(
                   child: SingleChildScrollView(
-                    physics: AlwaysScrollableScrollPhysics(),
+                    physics: const AlwaysScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                         FruitsCard(),
-                         SizedBox(
+                        GestureDetector(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const LearnWordsScreen())),
+                            child: const FruitsCard()),
+                        const SizedBox(
                           height: 25,
                         ),
-                         VegetablesCard(),
-                         SizedBox(
+                        const VegetablesCard(),
+                        const SizedBox(
                           height: 25,
                         ),
-                         WorkCard(),
-                         SizedBox(
+                        const WorkCard(),
+                        const SizedBox(
                           height: 25,
                         ),
-                        NumberCard()
+                        const NumberCard()
                       ],
                     ),
                   ),
@@ -92,4 +99,3 @@ class WordsScreen extends StatelessWidget {
     );
   }
 }
-

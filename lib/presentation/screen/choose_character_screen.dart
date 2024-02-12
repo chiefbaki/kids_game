@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/presentation/screen/profile_screen.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class ChooseCharacterScreen extends StatelessWidget {
@@ -32,10 +33,13 @@ class ChooseCharacterScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Image.asset(
-                    Images.aktan,
-                    height: 150,
-                    width: 350,
+                  child: GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen())),
+                    child: Image.asset(
+                      Images.aktan,
+                      height: 150,
+                      width: 350,
+                    ),
                   ),
                 );
               },
