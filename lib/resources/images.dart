@@ -3,8 +3,13 @@ part of 'resources.dart';
 class Images {
   Images._();
 
+
+  static const String aktan = 'assets/pngs/aktan.png';
+  static const String apple = 'assets/pngs/apple.png';
+  static const String boy = 'assets/pngs/boy.png';
+  static const String jomok = 'assets/pngs/jomok.png';
+
   static const String rectangle12 = 'assets/images/Rectangle_12.png';
-  static const String apple = 'assets/images/apple.png';
   static const String appleMain = 'assets/images/apple_main.png';
   static const String avatar = 'assets/images/avatar.png';
   static const String ball = 'assets/images/ball.png';
@@ -26,4 +31,5 @@ class Images {
   static const String story = 'assets/images/story.png';
   static const String tomato = 'assets/images/tomato.png';
   static const String unnamed1 = 'assets/images/unnamed 1.png';
+
 }

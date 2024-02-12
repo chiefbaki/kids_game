@@ -33,3 +33,4 @@ groups:
   - path: assets/images
     class_name: Images
     types: [ .png, .jpg, .jpeg,]
+

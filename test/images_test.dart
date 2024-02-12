@@ -5,6 +5,13 @@ import 'package:kids_game/resources/resources.dart';
 
 void main() {
   test('images assets test', () {
+
+    expect(File(Images.aktan).existsSync(), isTrue);
+    expect(File(Images.apple).existsSync(), isTrue);
+    expect(File(Images.avatar).existsSync(), isTrue);
+    expect(File(Images.boy).existsSync(), isTrue);
+    expect(File(Images.jomok).existsSync(), isTrue);
+
     expect(File(Images.rectangle12).existsSync(), isTrue);
     expect(File(Images.apple).existsSync(), isTrue);
     expect(File(Images.appleMain).existsSync(), isTrue);
@@ -27,5 +34,6 @@ void main() {
     expect(File(Images.story).existsSync(), isTrue);
     expect(File(Images.tomato).existsSync(), isTrue);
     expect(File(Images.unnamed1).existsSync(), isTrue);
+
   });
 }
