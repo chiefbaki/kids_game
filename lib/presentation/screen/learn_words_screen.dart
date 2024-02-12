@@ -38,14 +38,14 @@ class LearnWordsScreen extends StatelessWidget {
                   iconSize: 50,
                 ),
                 Image.asset(
-                  width: 230,
-                  height: 340,
+                  width: 227,
+                  height: 337,
                   Images.apple,
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: SvgPictures.right,
-                  iconSize: 50,
+                  iconSize: 45,
                 ),
               ],
             ),
