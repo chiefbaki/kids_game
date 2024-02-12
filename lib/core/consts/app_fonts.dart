@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppFonts {
+
   static const TextStyle s40w600 = TextStyle(
     fontSize: 40,
     fontWeight: FontWeight.w600,
@@ -29,4 +30,5 @@ abstract class AppFonts {
             color: Colors.black.withOpacity(0.35),
             offset: const Offset(0, 4))
       ]);
+
 }
