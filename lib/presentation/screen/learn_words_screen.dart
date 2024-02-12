@@ -27,7 +27,7 @@ class LearnWordsScreen extends StatelessWidget {
             profilePhoto: Images.boy,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 100, right: 16, left: 16),
+            padding: const EdgeInsets.only(top: 100),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,8 +38,8 @@ class LearnWordsScreen extends StatelessWidget {
                   iconSize: 50,
                 ),
                 Image.asset(
-                  width: 260,
-                  height: 370,
+                  width: 240,
+                  height: 350,
                   Images.apple,
                 ),
                 IconButton(
