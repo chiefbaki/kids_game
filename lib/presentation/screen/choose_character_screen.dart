@@ -29,6 +29,7 @@ class ChooseCharacterScreen extends StatelessWidget {
                   child: Text(
                     "КААРМАН ТАНДАНЫЗ",
                     style: AppFonts.s30w600,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
