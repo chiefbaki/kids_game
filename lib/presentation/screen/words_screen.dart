@@ -41,15 +41,18 @@ class WordsScreen extends StatelessWidget {
                                 offset: const Offset(0, 4))
                           ],
                         )),
-                    Text(
-                      "АКТАН",
-                      style: AppFonts.s40w600
-                          .copyWith(color: AppColors.white, shadows: [
-                        Shadow(
-                            blurRadius: 4,
-                            color: Colors.black.withOpacity(0.35),
-                            offset: const Offset(0, 4))
-                      ]),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        "АКТАН",
+                        style: AppFonts.s40w600
+                            .copyWith(color: AppColors.white, shadows: [
+                          Shadow(
+                              blurRadius: 4,
+                              color: Colors.black.withOpacity(0.35),
+                              offset: const Offset(0, 4))
+                        ]),
+                      ),
                     ),
                     const CircleAvatar(
                         radius: 30,
