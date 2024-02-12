@@ -18,7 +18,7 @@ class ChooseCharacterScreen extends StatelessWidget {
       child: Scaffold(
           body: SafeArea(
               child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.only(right: 15, left: 15, top: 20),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
