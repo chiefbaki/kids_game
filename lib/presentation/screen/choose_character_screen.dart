@@ -23,9 +23,11 @@ class ChooseCharacterScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 40),
-              child: Text(
-                "КААРМАН ТАНДАНЫЗ",
-                style: AppFonts.s30w600,
+              child: Center(
+                child: Text(
+                  "КААРМАН ТАНДАНЫЗ",
+                  style: AppFonts.s30w600,
+                ),
               ),
             ),
             Expanded(
@@ -34,7 +36,10 @@ class ChooseCharacterScreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: GestureDetector(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen())),
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfileScreen())),
                     child: Image.asset(
                       Images.aktan,
                       height: 150,
