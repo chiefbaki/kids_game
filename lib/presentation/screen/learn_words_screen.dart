@@ -27,7 +27,7 @@ class LearnWordsScreen extends StatelessWidget {
             profilePhoto: Images.boy,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 100),
+            padding: const EdgeInsets.only(top: 100, right: 16, left: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
