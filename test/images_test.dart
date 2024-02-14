@@ -17,6 +17,7 @@ void main() {
     expect(File(Images.carrot).existsSync(), isTrue);
     expect(File(Images.chacterAktan).existsSync(), isTrue);
     expect(File(Images.chicken).existsSync(), isTrue);
+    expect(File(Images.close).existsSync(), isTrue);
     expect(File(Images.cow).existsSync(), isTrue);
     expect(File(Images.doctor).existsSync(), isTrue);
     expect(File(Images.four).existsSync(), isTrue);

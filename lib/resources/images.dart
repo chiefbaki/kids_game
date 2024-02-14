@@ -16,6 +16,7 @@ class Images {
   static const String carrot = 'assets/images/carrot.png';
   static const String chacterAktan = 'assets/images/chacterAktan.png';
   static const String chicken = 'assets/images/chicken.png';
+  static const String close = 'assets/images/close.png';
   static const String cow = 'assets/images/cow.png';
   static const String doctor = 'assets/images/doctor.png';
   static const String four = 'assets/images/four.png';

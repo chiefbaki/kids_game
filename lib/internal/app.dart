@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kids_game/core/network/dio_settings.dart';
 import 'package:kids_game/domain/repositories/get_category_repository.dart';
 import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
+import 'package:kids_game/presentation/screen/learn_words_screen.dart';
 import 'package:kids_game/presentation/screen/words_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
           debugShowCheckedModeBanner: false,
-          home: const WordsScreen(),
+          home: const LearnWordsScreen(),
         ),
       ),
     );

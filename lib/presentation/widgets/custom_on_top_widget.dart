@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/resources/resources.dart';
 import 'package:kids_game/resources/svg_pictures.dart';
 
 class CustomTopWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class CustomTopWidget extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {},
-            icon: SvgPictures.cancel,
+            icon: Image.asset(Images.close, height: 37, width: 37,),
             iconSize: 37,
             alignment: Alignment.center,
           ),
