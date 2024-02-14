@@ -16,7 +16,9 @@ class CustomTopWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: SvgPictures.cancel,
             iconSize: 37,
             alignment: Alignment.center,

@@ -9,7 +9,7 @@ class Images {
   static const String appleMain = 'assets/images/apple_main.png';
   static const String avatar = 'assets/images/avatar.png';
   static const String ball = 'assets/images/ball.png';
-  static const String body = 'assets/images/body.png';
+  static const String body = 'assets/images/body.jpeg';
   static const String boy = 'assets/images/boy.png';
   static const String carrot = 'assets/images/carrot.png';
   static const String chacterAktan = 'assets/images/chacterAktan.png';
