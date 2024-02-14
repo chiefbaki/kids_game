@@ -5,7 +5,6 @@ import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
-import 'package:kids_game/resources/svg_pictures.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class LearnWordsScreen extends StatefulWidget {

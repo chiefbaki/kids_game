@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/resources/resources.dart';
+
 
 class CharacterCard extends StatelessWidget {
-  CharacterCard(
+  const CharacterCard(
       {super.key,
       required this.name,
       required this.photo,
       this.positionRight = true,
       required this.colors});
-  String name;
-  String photo;
-  bool positionRight;
-  List<Color> colors;
+  final String name;
+  final String photo;
+  final bool positionRight;
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/resources/resources.dart';
-import 'package:kids_game/resources/svg_pictures.dart';
+
+
 
 class CustomTopWidget extends StatelessWidget {
   const CustomTopWidget(

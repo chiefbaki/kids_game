@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/presentation/screen/learn_words_screen.dart';
 import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
-import 'package:kids_game/presentation/widgets/number_card.dart';
-import 'package:kids_game/presentation/widgets/work_card.dart';
-import 'package:kids_game/presentation/widgets/fruits_card.dart';
-import 'package:kids_game/presentation/widgets/vegetable_card.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class WordsScreen extends StatelessWidget {
