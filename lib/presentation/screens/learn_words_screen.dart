@@ -5,7 +5,6 @@ import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
-import 'package:kids_game/resources/svg_pictures.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class LearnWordsScreen extends StatefulWidget {
@@ -44,8 +43,8 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: AppColors.bgColor,
-              begin: Alignment.topRight,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               end: Alignment.bottomRight)),
       child: Scaffold(
           body: SafeArea(
@@ -83,7 +82,6 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
           PlaySound(onPressed: () async {
             final assetsAudioPlayer = AssetsAudioPlayer();
             assetsAudioPlayer.open(Audio("assets/a.mp3"), autoStart: true);
-            
           }),
           Padding(
             padding: EdgeInsets.only(top: 40),

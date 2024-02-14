@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/resources/resources.dart';
-import 'package:kids_game/resources/svg_pictures.dart';
+
+
 
 class CustomTopWidget extends StatelessWidget {
   const CustomTopWidget(
@@ -12,36 +13,39 @@ class CustomTopWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 28),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image.asset(
-              Images.close,
-              height: 37,
-              width: 37,
+      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 10),
+      child: SizedBox(
+        height: 80,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Image.asset(
+                Images.close,
+                height: 37,
+                width: 37,
+              ),
+              
+              alignment: Alignment.center,
             ),
-            iconSize: 37,
-            alignment: Alignment.center,
-          ),
-          Text(
-            profileName,
-            style: AppFonts.s40w600.copyWith(shadows: [
-              Shadow(
-                  blurRadius: 4,
-                  color: Colors.black.withOpacity(0.35),
-                  offset: const Offset(0, 4))
-            ]),
-          ),
-          CircleAvatar(
-              radius: 40,
-              backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage(profilePhoto))
-        ],
+            Text(
+              profileName,
+              style: AppFonts.s40w600.copyWith(shadows: [
+                Shadow(
+                    blurRadius: 4,
+                    color: Colors.black.withOpacity(0.35),
+                    offset: const Offset(0, 4))
+              ]),
+            ),
+            CircleAvatar(
+                radius: 25,
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage(profilePhoto))
+          ],
+        ),
       ),
     );
   }

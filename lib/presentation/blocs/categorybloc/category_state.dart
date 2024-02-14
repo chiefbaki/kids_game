@@ -8,7 +8,7 @@ final class CategoryInitial extends CategoryState {}
 final class CategoryLoading extends CategoryState {}
 
 final class CategorySuccess extends CategoryState {
-  List<CategoryModel> model;
+  final List<CategoryModel> model;
   CategorySuccess({required this.model});
 }
 

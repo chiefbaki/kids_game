@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/presentation/screen/words_screen.dart';
+import 'package:kids_game/presentation/screens/words_screen.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class CardOneMainScreen extends StatelessWidget {

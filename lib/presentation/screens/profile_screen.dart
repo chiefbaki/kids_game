@@ -16,9 +16,10 @@ class ProfileScreen extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: AppColors.bgColor,
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight)),
+        colors: AppColors.bgColor,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      )),
       child: Scaffold(
         body: Center(
           child: Padding(
