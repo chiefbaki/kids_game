@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/data/model/category_model.dart';
+import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
 import 'package:kids_game/presentation/widgets/number_card.dart';
 import 'package:kids_game/presentation/widgets/work_card.dart';
 import 'package:kids_game/presentation/widgets/fruits_card.dart';
@@ -12,6 +15,7 @@ class WordsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<CategoryBloc>(context).add(GetListCategories());
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -54,36 +58,49 @@ class WordsScreen extends StatelessWidget {
                         radius: 30,
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage(
-                          Images.avatar,
+                          Images.boy,
                         ))
                   ],
                 ),
-                const SizedBox(
-                  height: 39,
-                ),
-                const Expanded(
-                  child: SingleChildScrollView(
-                    physics: AlwaysScrollableScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    child: Column(
-                      children: [
-                         FruitsCard(),
-                         SizedBox(
-                          height: 25,
-                        ),
-                         VegetablesCard(),
-                         SizedBox(
-                          height: 25,
-                        ),
-                         WorkCard(),
-                         SizedBox(
-                          height: 25,
-                        ),
-                        NumberCard()
-                      ],
-                    ),
-                  ),
-                ),
+                // const SizedBox(
+                //   height: 39,
+                // ),
+                BlocConsumer<CategoryBloc, CategoryState>(
+                  listener: (context, state) {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=> ))
+                  },
+                  builder: (context, state) {
+                    if (state is CategorySuccess) {
+                      return Expanded(
+                          child: ListView.builder(
+                              itemCount: state.model.length,
+                              itemBuilder: (context, i) {
+                                return InkWell(
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: (){print("object${i}" );},
+                                  child: SizedBox(
+                                    child: Image.network(
+                                      
+                                      state.model[i].image ?? "",
+                                      height: 170,
+                                      width: 350,
+                                    ),
+                                  ),
+                                );
+                              }));
+                    } else if (state is CategoryLoading) {
+                      return const Padding(
+                        padding: EdgeInsets.only(top: 300),
+                        
+                          child: CircularProgressIndicator.adaptive(
+                        backgroundColor: Colors.white,
+                      ));
+                    } else {
+                      return SizedBox.shrink();
+                    }
+                  },
+                )
               ],
             ),
           ),
@@ -92,4 +109,3 @@ class WordsScreen extends StatelessWidget {
     );
   }
 }
-

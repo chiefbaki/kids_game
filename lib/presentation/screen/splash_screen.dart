@@ -1,5 +1,6 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:kids_game/presentation/screen/choose_character_screen.dart';
 import 'package:kids_game/presentation/screen/profile_screen.dart';
 import 'package:kids_game/resources/resources.dart';
 
@@ -12,19 +13,20 @@ class SplashScreen extends StatelessWidget {
       gradient: const LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [
-          Colors.lightBlue,
-          Colors.blue,
-        ],
+        colors: [Color(0xFF42A8FF), Color(0xFF913CFF)],
       ),
       childWidget: SizedBox(
         height: 400,
-        child: Image.asset(Images.logo, width: 400, height: 400,),
+        child: Image.asset(
+          Images.logo,
+          width: 400,
+          height: 400,
+        ),
       ),
       duration: const Duration(milliseconds: 3000),
       animationDuration: const Duration(milliseconds: 1000),
       onAnimationEnd: () => debugPrint("On Scale End"),
-      nextScreen: const ProfileScreen(),
+      nextScreen: const ChooseCharacterScreen(),
     );
   }
 }

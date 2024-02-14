@@ -30,7 +30,7 @@ use_references_list: false
 package: resources
 
 groups:
-  - path: assets/images
-    class_name: Images
-    types: [ .png, .jpg, .jpeg,]
+- path: assets/images/
+  class_name: Images
+  types: [.png, .jpg, .jpeg]
 
