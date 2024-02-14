@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/widgets/card_one_main.dart';
 import 'package:kids_game/presentation/widgets/card_two_main.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class ProfileScreen extends StatelessWidget {
-  String profilePhoto;
-  String nameOfCharacter;
+  // String profilePhoto;
+  // String nameOfCharacter;
   ProfileScreen({super.key,
-  required this.nameOfCharacter,
+  // required this.nameOfCharacter,
 
-  required this.profilePhoto
+  // required this.profilePhoto
 
   });
 
@@ -33,7 +35,8 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      nameOfCharacter,
+                      context.watch<CharacterInfoProvider>().model?.nameOfCharacter ?? ""
+                      ,
                       style: AppFonts.s40w600
                           .copyWith(color: AppColors.white, shadows: [
                         Shadow(
@@ -47,7 +50,7 @@ class ProfileScreen extends StatelessWidget {
                         radius: 30,
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage(
-                          profilePhoto,
+                          context.watch<CharacterInfoProvider>().model?.photoOfCharacteForProfile ?? "",
                           
                           
 

@@ -1,7 +1,9 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
@@ -51,29 +53,29 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
           body: SafeArea(
               child: Column(
         children: [
-          const CustomTopWidget(
-            profileName: "АКТАН",
-            profilePhoto: Images.boy,
+           CustomTopWidget(
+            profileName: context.watch<CharacterInfoProvider>().model!.nameOfCharacter,
+            profilePhoto: context.watch<CharacterInfoProvider>().model!.photoOfCharacteForProfile,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 100),
             child: Row(
               children: [
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: SvgPictures.left,
-                //   iconSize: 50,
-                // ),
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPictures.left,
+                  iconSize: 50,
+                ),
                 Image.asset(
                   width: 260,
                   height: 370,
                   Images.apple,
                 ),
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: SvgPictures.right,
-                //   iconSize: 50,
-                // ),
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPictures.right,
+                  iconSize: 50,
+                ),
               ],
             ),
           ),
