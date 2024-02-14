@@ -6,7 +6,14 @@ import 'package:kids_game/presentation/widgets/card_two_main.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  String profilePhoto;
+  String nameOfCharacter;
+  ProfileScreen({super.key,
+  required this.nameOfCharacter,
+
+  required this.profilePhoto
+
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "АКТАН",
+                      nameOfCharacter,
                       style: AppFonts.s40w600
                           .copyWith(color: AppColors.white, shadows: [
                         Shadow(
@@ -35,12 +42,17 @@ class ProfileScreen extends StatelessWidget {
                             offset: const Offset(0, 4))
                       ]),
                     ),
-                    const CircleAvatar(
+                     CircleAvatar(
+
                         radius: 30,
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage(
-                          Images.avatar,
-                        ))
+                          profilePhoto,
+                          
+                          
+
+                        ),
+                         )
                   ],
                 ),
                 const SizedBox(
