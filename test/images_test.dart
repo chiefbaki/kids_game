@@ -7,6 +7,7 @@ void main() {
   test('images assets test', () {
     expect(File(Images.rectangle12).existsSync(), isTrue);
     expect(File(Images.akylai).existsSync(), isTrue);
+    expect(File(Images.akylaiprofilephoto).existsSync(), isTrue);
     expect(File(Images.apple).existsSync(), isTrue);
     expect(File(Images.appleMain).existsSync(), isTrue);
     expect(File(Images.avatar).existsSync(), isTrue);
@@ -25,10 +26,12 @@ void main() {
     expect(File(Images.logo).existsSync(), isTrue);
     expect(File(Images.man).existsSync(), isTrue);
     expect(File(Images.meerim).existsSync(), isTrue);
+    expect(File(Images.meerimprofilephoto).existsSync(), isTrue);
     expect(File(Images.one).existsSync(), isTrue);
     expect(File(Images.pear).existsSync(), isTrue);
     expect(File(Images.potato).existsSync(), isTrue);
     expect(File(Images.samat).existsSync(), isTrue);
+    expect(File(Images.samatprofilephoto).existsSync(), isTrue);
     expect(File(Images.splashImg).existsSync(), isTrue);
     expect(File(Images.story).existsSync(), isTrue);
     expect(File(Images.tomato).existsSync(), isTrue);
