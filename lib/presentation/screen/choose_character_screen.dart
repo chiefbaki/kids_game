@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/data/model/character_model.dart';
 import 'package:kids_game/presentation/screen/profile_screen.dart';
-import 'package:kids_game/resources/resources.dart';
+import 'package:kids_game/presentation/widgets/character_card.dart';
 
 class ChooseCharacterScreen extends StatelessWidget {
   const ChooseCharacterScreen({super.key});
@@ -18,43 +19,44 @@ class ChooseCharacterScreen extends StatelessWidget {
       child: Scaffold(
           body: SafeArea(
               child: Padding(
-        padding: const EdgeInsets.only(right: 15, left: 15, top: 20),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: Center(
-                  child: Text(
-                    "КААРМАН ТАНДАНЫЗ",
-                    style: AppFonts.s30w600,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: Text(
+                "КААРМАН ТАНДАНЫЗ",
+                style: AppFonts.s30w600,
               ),
-              Expanded(
-                  child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ProfileScreen())),
-                      child: Image.asset(
-                        Images.aktan,
-                        height: 150,
-                        width: 350,
-                      ),
-                    ),
-                  );
-                },
-                itemCount: 5,
-              ))
-            ],
-          ),
+            ),
+            Expanded(
+                child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfileScreen(
+                                      nameOfCharacter: CharacterModelList
+                                          .modelList[index].nameOfCharacter,
+                                      profilePhoto: CharacterModelList
+                                          .modelList[index]
+                                          .photoOfCharacteForProfile,
+                                    ))),
+                        child: CharacterCard(
+                          name: CharacterModelList
+                              .modelList[index].nameOfCharacter,
+                          photo: CharacterModelList
+                              .modelList[index].photoOfCharacter,
+                          colors:
+                              CharacterModelList.modelList[index].colorOfCard,
+                          positionRight:
+                              CharacterModelList.modelList[index].positionRight,
+                        ),
+                      );
+                    },
+                    itemCount: CharacterModelList.modelList.length))
+          ],
         ),
       ))),
     );

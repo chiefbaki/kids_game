@@ -72,6 +72,11 @@ class StoryScreen extends StatelessWidget {
                                   title: StoryModelList.models[index].title,
                                   img: StoryModelList.models[index].img,
                                 ));
+
+                            // return StoryCard(
+                            //   title: StoryModelList.models[index].title,
+                            //   img: StoryModelList.models[index].img,
+                            // );
                           },
                           separatorBuilder: (_, index) {
                             return const SizedBox(height: 41);
