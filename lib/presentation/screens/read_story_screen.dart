@@ -13,9 +13,10 @@ class ReadStoryScreen extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: AppColors.bgColor,
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight)),
+        colors: AppColors.bgColor,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      )),
       child: Scaffold(
         body: SafeArea(
           child: Column(
@@ -34,10 +35,9 @@ class ReadStoryScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 40, bottom: 28),
                         child: Text(
-                          textAlign: TextAlign.center,
-                          "АПЕНДИ ЖАНА ЭШЕК",
-                          style: AppFonts.s30w600
-                        ),
+                            textAlign: TextAlign.center,
+                            "АПЕНДИ ЖАНА ЭШЕК",
+                            style: AppFonts.s30w600),
                       ),
                       Image.asset(
                         Images.jomok,
@@ -45,8 +45,10 @@ class ReadStoryScreen extends StatelessWidget {
                         width: 300,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 28),
-                        child: PlaySound(onPressed: (){},),
+                        padding: const EdgeInsets.symmetric(vertical: 28),
+                        child: PlaySound(
+                          onPressed: () {},
+                        ),
                       ),
                       Text(
                         "Апендинин эшеги жоголуп кетиптир. Ал абдан кайгырды. Кишилер ага көңүл айтышыпКейип-кепчип эмне кыласың, өзүң аман болсоң болду, дагы башкасын сатып аларсың, ‒ дешти.‒ Туура айтасыңар! Ошол эшекке минип турбаганым жакшы болгон экен, болбосо аны менен кошо өзүм да жоголуп кетмек экем! ‒ деп жооп бериптир Апенди.Кишилер анын бул айтканына күлүп ",

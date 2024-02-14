@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/data/model/character_model.dart';
-import 'package:kids_game/presentation/screen/profile_screen.dart';
+import 'package:kids_game/presentation/screens/profile_screen.dart';
 import 'package:kids_game/presentation/widgets/character_card.dart';
 
 class ChooseCharacterScreen extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/data/model/story_model.dart';
-import 'package:kids_game/presentation/screen/read_story_screen.dart';
+import 'package:kids_game/presentation/screens/read_story_screen.dart';
 import 'package:kids_game/presentation/widgets/story_card.dart';
 import 'package:kids_game/resources/resources.dart';
 
@@ -14,9 +14,10 @@ class StoryScreen extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: AppColors.bgColor,
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight)),
+        colors: AppColors.bgColor,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      )),
       child: Scaffold(
         body: Center(
           child: Padding(

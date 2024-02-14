@@ -43,8 +43,8 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: AppColors.bgColor,
-              begin: Alignment.topRight,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               end: Alignment.bottomRight)),
       child: Scaffold(
           body: SafeArea(
@@ -82,7 +82,6 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
           PlaySound(onPressed: () async {
             final assetsAudioPlayer = AssetsAudioPlayer();
             assetsAudioPlayer.open(Audio("assets/a.mp3"), autoStart: true);
-            
           }),
           Padding(
             padding: EdgeInsets.only(top: 40),
