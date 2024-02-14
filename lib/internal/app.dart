@@ -3,7 +3,6 @@ import 'package:kids_game/core/network/dio_settings.dart';
 import 'package:kids_game/domain/repositories/get_category_repository.dart';
 import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
 import 'package:kids_game/presentation/screen/learn_words_screen.dart';
-import 'package:kids_game/presentation/screen/words_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,12 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
-      debugShowCheckedModeBanner: false,
-      home: const StoryScreen(),
-=======
+
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(
@@ -41,7 +35,6 @@ class MyApp extends StatelessWidget {
           home: const LearnWordsScreen(),
         ),
       ),
->>>>>>> 488e5faec40df6a2fc1d9df00d0cff4322da0e93
     );
   }
 }

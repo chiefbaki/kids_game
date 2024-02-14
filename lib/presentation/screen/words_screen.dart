@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/data/model/category_model.dart';
+import 'package:kids_game/presentation/screen/learn_words_screen.dart';
 import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
 import 'package:kids_game/presentation/widgets/number_card.dart';
 import 'package:kids_game/presentation/widgets/work_card.dart';
@@ -44,15 +44,18 @@ class WordsScreen extends StatelessWidget {
                                 offset: const Offset(0, 4))
                           ],
                         )),
-                    Text(
-                      "АКТАН",
-                      style: AppFonts.s40w600
-                          .copyWith(color: AppColors.white, shadows: [
-                        Shadow(
-                            blurRadius: 4,
-                            color: Colors.black.withOpacity(0.35),
-                            offset: const Offset(0, 4))
-                      ]),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Text(
+                        "АКТАН",
+                        style: AppFonts.s40w600
+                            .copyWith(color: AppColors.white, shadows: [
+                          Shadow(
+                              blurRadius: 4,
+                              color: Colors.black.withOpacity(0.35),
+                              offset: const Offset(0, 4))
+                        ]),
+                      ),
                     ),
                     const CircleAvatar(
                         radius: 30,
@@ -62,9 +65,6 @@ class WordsScreen extends StatelessWidget {
                         ))
                   ],
                 ),
-                // const SizedBox(
-                //   height: 39,
-                // ),
                 BlocConsumer<CategoryBloc, CategoryState>(
                   listener: (context, state) {
                     // Navigator.push(context, MaterialPageRoute(builder: (context)=> ))
@@ -78,10 +78,11 @@ class WordsScreen extends StatelessWidget {
                                 return InkWell(
                                   splashColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
-                                  onTap: (){print("object${i}" );},
+                                  onTap: () {
+                                    print("object$i");
+                                  },
                                   child: SizedBox(
                                     child: Image.network(
-                                      
                                       state.model[i].image ?? "",
                                       height: 170,
                                       width: 350,
@@ -91,13 +92,12 @@ class WordsScreen extends StatelessWidget {
                               }));
                     } else if (state is CategoryLoading) {
                       return const Padding(
-                        padding: EdgeInsets.only(top: 300),
-                        
+                          padding: EdgeInsets.only(top: 300),
                           child: CircularProgressIndicator.adaptive(
-                        backgroundColor: Colors.white,
-                      ));
+                            backgroundColor: Colors.white,
+                          ));
                     } else {
-                      return SizedBox.shrink();
+                      return const SizedBox.shrink();
                     }
                   },
                 )

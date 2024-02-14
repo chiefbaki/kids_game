@@ -1,7 +1,7 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/presentation/screen/choose_character_screen.dart';
-import 'package:kids_game/presentation/screen/profile_screen.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
       gradient: const LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [Color(0xFF42A8FF), Color(0xFF913CFF)],
+        colors: AppColors.bgColor,
       ),
       childWidget: SizedBox(
         height: 400,

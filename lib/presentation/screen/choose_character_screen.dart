@@ -33,14 +33,23 @@ class ChooseCharacterScreen extends StatelessWidget {
                 child: ListView.builder(
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>  ProfileScreen(nameOfCharacter: 
-                        CharacterModelList.modelList[index].nameOfCharacter, profilePhoto: CharacterModelList.modelList[index].photoOfCharacteForProfile,))),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfileScreen(
+                                      nameOfCharacter: CharacterModelList
+                                          .modelList[index].nameOfCharacter,
+                                      profilePhoto: CharacterModelList
+                                          .modelList[index]
+                                          .photoOfCharacteForProfile,
+                                    ))),
                         child: CharacterCard(
-                          name:
-                              CharacterModelList.modelList[index].nameOfCharacter,
+                          name: CharacterModelList
+                              .modelList[index].nameOfCharacter,
                           photo: CharacterModelList
                               .modelList[index].photoOfCharacter,
-                          colors: CharacterModelList.modelList[index].colorOfCard,
+                          colors:
+                              CharacterModelList.modelList[index].colorOfCard,
                           positionRight:
                               CharacterModelList.modelList[index].positionRight,
                         ),

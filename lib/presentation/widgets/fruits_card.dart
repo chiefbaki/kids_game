@@ -42,8 +42,8 @@ class FruitsCard extends StatelessWidget {
         Positioned(
             bottom: 0,
             child: Image.asset(
-          Images.apple,
-          width: 132,
+          Images.appleMain,
+          width: 78,
         )),
         Positioned(
             right: 0,

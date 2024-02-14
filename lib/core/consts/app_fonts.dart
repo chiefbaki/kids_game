@@ -4,6 +4,7 @@ abstract class AppFonts {
 
   static  TextStyle s40w600 = TextStyle(
     fontSize: 40,
+
     fontWeight: FontWeight.w600,
     color: Colors.white,
     fontFamily: "Inter",
@@ -16,8 +17,8 @@ abstract class AppFonts {
       ]
   );
   static TextStyle s30w600 = TextStyle(
-      fontSize: 30,
-      fontWeight: FontWeight.w400,
+      fontSize: 25,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
       fontFamily: "Inter",
       shadows: [

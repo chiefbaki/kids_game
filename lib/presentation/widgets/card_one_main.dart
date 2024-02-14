@@ -13,8 +13,8 @@ class CardOneMainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        GestureDetector(
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WordsScreen())),
+        InkWell(
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const WordsScreen())),
           child: Container(
             width: 350,
             height: 200,

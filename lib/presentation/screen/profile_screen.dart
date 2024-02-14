@@ -6,14 +6,10 @@ import 'package:kids_game/presentation/widgets/card_two_main.dart';
 import 'package:kids_game/resources/resources.dart';
 
 class ProfileScreen extends StatelessWidget {
-  String profilePhoto;
-  String nameOfCharacter;
-  ProfileScreen({super.key,
-  required this.nameOfCharacter,
-
-  required this.profilePhoto
-
-  });
+  final String profilePhoto;
+  final String nameOfCharacter;
+  const ProfileScreen(
+      {super.key, required this.nameOfCharacter, required this.profilePhoto});
 
   @override
   Widget build(BuildContext context) {
@@ -26,35 +22,28 @@ class ProfileScreen extends StatelessWidget {
       child: Scaffold(
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 39),
-            child: Column(
-              children: [
+              padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 39),
+              child: Column(children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      nameOfCharacter,
-                      style: AppFonts.s40w600
-                          .copyWith(color: AppColors.white, shadows: [
-                        Shadow(
-                            blurRadius: 4,
-                            color: Colors.black.withOpacity(0.35),
-                            offset: const Offset(0, 4))
-                      ]),
-                    ),
-                     CircleAvatar(
-
-                        radius: 30,
-                        backgroundColor: Colors.transparent,
-                        backgroundImage: AssetImage(
-                          profilePhoto,
-                          
-                          
-
-                        ),
-                         )
-                  ],
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        nameOfCharacter,
+                        style: AppFonts.s40w600
+                            .copyWith(color: AppColors.white, shadows: [
+                          Shadow(
+                              blurRadius: 4,
+                              color: Colors.black.withOpacity(0.35),
+                              offset: const Offset(0, 4))
+                        ]),
+                      ),
+                      const CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.transparent,
+                          backgroundImage: AssetImage(
+                            Images.boy,
+                          ))
+                    ]),
                 const SizedBox(
                   height: 45,
                 ),
@@ -63,12 +52,9 @@ class ProfileScreen extends StatelessWidget {
                   height: 39,
                 ),
                 const CardTwoMainScreen()
-              ],
-            ),
-          ),
+              ])),
         ),
       ),
     );
   }
 }
-

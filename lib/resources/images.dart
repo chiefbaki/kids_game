@@ -3,16 +3,21 @@ part of 'resources.dart';
 class Images {
   Images._();
 
+  static const String aktan = 'assets/images/aktan.png';
+  static const String apple = 'assets/images/apple.png';
+  static const String boy = 'assets/images/boy.png';
+  static const String jomok = 'assets/images/jomok.png';
+
   static const String rectangle12 = 'assets/images/Rectangle_12.png';
   static const String akylai = 'assets/images/akylai.png';
   static const String akylaiprofilephoto =
       'assets/images/akylaiprofilephoto.png';
-  static const String apple = 'assets/images/apple.png';
+
   static const String appleMain = 'assets/images/apple_main.png';
   static const String avatar = 'assets/images/avatar.png';
   static const String ball = 'assets/images/ball.png';
   static const String body = 'assets/images/body.jpeg';
-  static const String boy = 'assets/images/boy.png';
+
   static const String carrot = 'assets/images/carrot.png';
   static const String chacterAktan = 'assets/images/chacterAktan.png';
   static const String chicken = 'assets/images/chicken.png';
@@ -20,7 +25,7 @@ class Images {
   static const String cow = 'assets/images/cow.png';
   static const String doctor = 'assets/images/doctor.png';
   static const String four = 'assets/images/four.png';
-  static const String jomok = 'assets/images/jomok.png';
+
   static const String jomoktorKyrgyzcha101 =
       'assets/images/jomoktor-kyrgyzcha10_1.png';
   static const String limon = 'assets/images/limon.png';

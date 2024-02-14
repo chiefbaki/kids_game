@@ -58,6 +58,8 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 100),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // IconButton(
                 //   onPressed: () {},
@@ -65,10 +67,11 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
                 //   iconSize: 50,
                 // ),
                 Image.asset(
-                  width: 260,
-                  height: 370,
+                  width: 227,
+                  height: 337,
                   Images.apple,
                 ),
+
                 // IconButton(
                 //   onPressed: () {},
                 //   icon: SvgPictures.right,

@@ -5,8 +5,8 @@ import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
 
-class StoryScreen extends StatelessWidget {
-  const StoryScreen({super.key});
+class ReadStoryScreen extends StatelessWidget {
+  const ReadStoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
