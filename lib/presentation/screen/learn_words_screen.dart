@@ -6,7 +6,6 @@ import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
 import 'package:kids_game/resources/svg_pictures.dart';
 
-
 class LearnWordsScreen extends StatelessWidget {
   const LearnWordsScreen({super.key});
 
@@ -49,7 +48,7 @@ class LearnWordsScreen extends StatelessWidget {
             ),
           ),
           const PlaySound(),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(top: 40),
             child: Text(
               "АЛМА",

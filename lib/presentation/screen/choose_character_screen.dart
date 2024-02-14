@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/resources/resources.dart';
+import 'package:kids_game/data/model/character_model.dart';
+import 'package:kids_game/presentation/screen/profile_screen.dart';
+import 'package:kids_game/presentation/widgets/character_card.dart';
 
 class ChooseCharacterScreen extends StatelessWidget {
   const ChooseCharacterScreen({super.key});
@@ -29,18 +31,21 @@ class ChooseCharacterScreen extends StatelessWidget {
             ),
             Expanded(
                 child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Image.asset(
-                    Images.aktan,
-                    height: 150,
-                    width: 350,
-                  ),
-                );
-              },
-              itemCount: 5,
-            ))
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const ProfileScreen())),
+                        child: CharacterCard(
+                          name:
+                              CharacterModelList.modelList[index].nameOfCharacter,
+                          photo: CharacterModelList
+                              .modelList[index].photoOfCharacter,
+                          colors: CharacterModelList.modelList[index].colorOfCard,
+                          positionRight:
+                              CharacterModelList.modelList[index].positionRight,
+                        ),
+                      );
+                    },
+                    itemCount: CharacterModelList.modelList.length))
           ],
         ),
       ))),

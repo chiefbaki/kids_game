@@ -123,7 +123,7 @@ spider:
   # Location where all the generated references will be stored
   package: resources
   groups:
-    - path: assets/pngs/
+    - path: assets/images/
       class_name: Images
       types: [ .png]
     # - path: assets/svgs/
