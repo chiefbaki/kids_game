@@ -54,36 +54,35 @@ class WordsScreen extends StatelessWidget {
                         radius: 30,
                         backgroundColor: Colors.transparent,
                         backgroundImage: AssetImage(
-                          Images.avatar,
+                          Images.boy,
                         ))
                   ],
                 ),
                 const SizedBox(
                   height: 39,
                 ),
-                const Expanded(
-                  child: SingleChildScrollView(
-                    physics: AlwaysScrollableScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    child: Column(
-                      children: [
-                         FruitsCard(),
-                         SizedBox(
-                          height: 25,
-                        ),
-                         VegetablesCard(),
-                         SizedBox(
-                          height: 25,
-                        ),
-                         WorkCard(),
-                         SizedBox(
-                          height: 25,
-                        ),
-                        NumberCard()
-                      ],
-                    ),
-                  ),
-                ),
+
+                // child: SingleChildScrollView(
+                //   physics: AlwaysScrollableScrollPhysics(),
+                //   scrollDirection: Axis.vertical,
+                //   child: Column(
+                //     children: [
+                //        FruitsCard(),
+                //        SizedBox(
+                //         height: 25,
+                //       ),
+                //        VegetablesCard(),
+                //        SizedBox(
+                //         height: 25,
+                //       ),
+                //        WorkCard(),
+                //        SizedBox(
+                //         height: 25,
+                //       ),
+                //       NumberCard()
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -92,4 +91,3 @@ class WordsScreen extends StatelessWidget {
     );
   }
 }
-
