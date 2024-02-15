@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kids_game/core/consts/app_color.dart';
-import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/data/model/story_model.dart';
+import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/screens/read_story_screen.dart';
+import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/story_card.dart';
-import 'package:kids_game/resources/resources.dart';
 
 class StoryScreen extends StatelessWidget {
   const StoryScreen({super.key});
@@ -12,52 +13,28 @@ class StoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-        colors: AppColors.bgColor,
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-      )),
-      child: Scaffold(
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 39),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.menu,
-                          size: 57,
-                          color: AppColors.white,
-                          shadows: [
-                            Shadow(
-                                blurRadius: 4,
-                                color: Colors.black.withOpacity(0.35),
-                                offset: const Offset(0, 4))
-                          ],
-                        )),
-                    Text(
-                      "АКТАН",
-                      style: AppFonts.s40w600
-                          .copyWith(color: AppColors.white, shadows: [
-                        Shadow(
-                            blurRadius: 4,
-                            color: Colors.black.withOpacity(0.35),
-                            offset: const Offset(0, 4))
-                      ]),
-                    ),
-                    const CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.transparent,
-                        backgroundImage: AssetImage(
-                          Images.boy,
-                        ))
-                  ],
-                ),
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          colors: AppColors.bgColor,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        )),
+        child: Scaffold(
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 39),
+              child: Column(children: [
+                CustomTopWidget(
+                    profileName: context
+                            .watch<CharacterInfoProvider>()
+                            .model
+                            ?.nameOfCharacter ??
+                        "АКТАН",
+                    profilePhoto: context
+                            .watch<CharacterInfoProvider>()
+                            .model
+                            ?.photoOfCharacteForProfile ??
+                        ""),
                 Expanded(
                   child: SizedBox(
                       height: MediaQuery.of(context).size.height * 1,
@@ -84,11 +61,9 @@ class StoryScreen extends StatelessWidget {
                           },
                           itemCount: StoryModelList.models.length)),
                 ),
-              ],
+              ]),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
