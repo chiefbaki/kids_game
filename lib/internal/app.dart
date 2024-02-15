@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/network/dio_settings.dart';
 import 'package:kids_game/data/provider/profile_info.dart';
+import 'package:kids_game/domain/repositories/audio_repository.dart';
 import 'package:kids_game/domain/repositories/get_category_repository.dart';
 import 'package:kids_game/domain/repositories/get_story_id_repository.dart';
 import 'package:kids_game/domain/repositories/get_story_repository.dart';
+import 'package:kids_game/presentation/blocs/audio_bloc/audio_bloc.dart';
 import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/presentation/blocs/story_bloc/story_bloc.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_bloc.dart';
 import 'package:kids_game/presentation/screens/splash_screen.dart';
 import 'package:kids_game/presentation/screens/story_screen.dart';
+import 'package:kids_game/presentation/screens/test.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -36,6 +39,9 @@ class MyApp extends StatelessWidget {
           create: (context) => StoryIdRepository(
               dio: RepositoryProvider.of<DioSettings>(context).dio),
         ),
+        RepositoryProvider(
+          create: (context) => AudioRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -55,13 +61,18 @@ class MyApp extends StatelessWidget {
                 repository:
                     RepositoryProvider.of<StoryIdRepository>(context)),
           ),
+          BlocProvider(
+            create: (context) => AudioBloc(
+                repository:
+                    RepositoryProvider.of<AudioRepository>(context)),
+          ),
         ],
         child: ChangeNotifierProvider(
           create: (context) => CharacterInfoProvider(),
           child: MaterialApp(
             theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
             debugShowCheckedModeBanner: false,
-            home: const SplashScreen(),
+            home: const TestScreen(),
           ),
         ),
       ),

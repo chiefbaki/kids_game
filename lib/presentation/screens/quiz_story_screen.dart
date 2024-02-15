@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/presentation/blocs/audio_bloc/audio_bloc.dart';
+import 'package:kids_game/presentation/blocs/audio_bloc/audio_event.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_bloc.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_event.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_state.dart';
@@ -58,7 +60,9 @@ class QuizStoryScreen extends StatelessWidget {
                         const SizedBox(
                           height: 28,
                         ),
-                        PlaySound(onPressed: () {}),
+                        PlaySound(onPressed: () {
+                          BlocProvider.of<AudioBloc>(context).add(GetAudioEvent());
+                        }),
                         const SizedBox(
                           height: 28,
                         ),
