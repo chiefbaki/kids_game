@@ -78,11 +78,11 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
                 // ),
               ],
             ),
-          ),
-          PlaySound(onPressed: () async {
-            final assetsAudioPlayer = AssetsAudioPlayer();
-            assetsAudioPlayer.open(Audio("assets/a.mp3"), autoStart: true);
-          }),
+           ),
+          // PlaySound(onPressed: () async {
+          //   final assetsAudioPlayer = AssetsAudioPlayer();
+          //   assetsAudioPlayer.open(Audio("assets/a.mp3"), autoStart: true);
+          // }),
           Padding(
             padding: EdgeInsets.only(top: 40),
             child: Text(

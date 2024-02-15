@@ -62,11 +62,14 @@ class WordsScreen extends StatelessWidget {
                   ],
                 ),
                 BlocConsumer<CategoryBloc, CategoryState>(
+                  
                   listener: (context, state) {
                     // Navigator.push(context, MaterialPageRoute(builder: (context)=> ))
+                    print("work");
                   },
                   builder: (context, state) {
                     if (state is CategorySuccess) {
+                      print("work success");
                       return Expanded(
                           child: ListView.builder(
                               itemCount: state.model.length,

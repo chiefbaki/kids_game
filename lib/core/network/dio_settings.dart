@@ -10,7 +10,7 @@ class DioSettings {
 
   Dio dio = Dio(
     BaseOptions(
-      // baseUrl: UrlRoutes.hostName,
+      // baseUrl: "https://6fe5-77-235-29-191.ngrok-free.app/",
       contentType: "application/json",
       headers: {
         "Accept": "application/json",

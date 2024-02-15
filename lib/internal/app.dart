@@ -5,6 +5,7 @@ import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/presentation/screens/quiz_fruits_screen.dart';
 import 'package:kids_game/presentation/screens/quiz_story_screen.dart';
+import 'package:kids_game/presentation/screens/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
           debugShowCheckedModeBanner: false,
-          home: const QuizFruitsScreen(),
+          home: const SplashScreen(),
         ),
       ),
     );

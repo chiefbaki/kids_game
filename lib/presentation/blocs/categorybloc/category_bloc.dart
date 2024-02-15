@@ -19,5 +19,5 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       }
     });
   }
-  GetCategoryRepository repository;
+  final GetCategoryRepository repository;
 }
