@@ -4,8 +4,8 @@ import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
+import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:kids_game/resources/svg_pictures.dart';
 
 class LearnWordsScreen extends StatefulWidget {
@@ -16,15 +16,10 @@ class LearnWordsScreen extends StatefulWidget {
 }
 
 class _LearnWordsScreenState extends State<LearnWordsScreen> {
-  final audioPlayer = AudioPlayer();
-  bool isPlaying = false;
-  Duration duration = Duration.zero;
-  Duration position = Duration.zero;
- 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  const BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -33,9 +28,13 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
           body: SafeArea(
               child: Column(
         children: [
-           CustomTopWidget(
-            profileName: context.watch<CharacterInfoProvider>().model!.nameOfCharacter,
-            profilePhoto: context.watch<CharacterInfoProvider>().model!.photoOfCharacteForProfile,
+          CustomTopWidget(
+            profileName:
+                context.watch<CharacterInfoProvider>().model!.nameOfCharacter,
+            profilePhoto: context
+                .watch<CharacterInfoProvider>()
+                .model!
+                .photoOfCharacteForProfile,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 100),
@@ -58,16 +57,12 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
                   icon: SvgPictures.right,
                   iconSize: 50,
                 ),
-
               ],
             ),
-           ),
-          // PlaySound(onPressed: () async {
-          //   final assetsAudioPlayer = AssetsAudioPlayer();
-          //   assetsAudioPlayer.open(Audio("assets/a.mp3"), autoStart: true);
-          // }),
+          ),
+          PlaySound(onPressed: () async {}),
           Padding(
-            padding: EdgeInsets.only(top: 40),
+            padding:const EdgeInsets.only(top: 40),
             child: Text(
               "АЛМА",
               style: AppFonts.s40w600,

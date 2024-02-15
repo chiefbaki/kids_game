@@ -10,8 +10,6 @@ import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/presentation/blocs/story_bloc/story_bloc.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_bloc.dart';
-import 'package:kids_game/presentation/screens/splash_screen.dart';
-import 'package:kids_game/presentation/screens/story_screen.dart';
 import 'package:kids_game/presentation/screens/test.dart';
 import 'package:provider/provider.dart';
 

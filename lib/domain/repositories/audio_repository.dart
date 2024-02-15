@@ -1,7 +1,6 @@
-import 'dart:convert';
 import 'dart:io';
-
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AudioRepository {
@@ -19,23 +18,21 @@ class AudioRepository {
     ),
   );
   Future<File> getAudio() async {
-    final Response<List<int>> response = await dio.post("http://tts.ulut.kg/api/tts",
-        data: {"text": "Анас Мурат Жантай Ислам", "speaker_id": 2});
-    print(response.data);
+    final Response<List<int>> response = await dio.post(
+        "http://tts.ulut.kg/api/tts",
+        data: {"text": "Международный университет Ала-Тоо Ата-Тюрка", "speaker_id": 2});
+    debugPrint(response.data.toString());
     final audioBytes = response.data!;
     return _saveAudioFile(audioBytes);
   }
 
-    Future<File> _saveAudioFile(List<int> audioBytes) async {
-    final directory = await getApplicationDocumentsDirectory();
-    final file = File('${directory.path}/audio.mp3');
+  Future<File> _saveAudioFile(List<int> audioBytes) async {
+    // final String projectDirectory = Directory.current.path;
+    const String filePath = 'Users/islamkurbanov/flutter/kids_game/assets/audio/audio.mp3';
+    final File file = File(filePath);
+    // final directory = await getApplicationDocumentsDirectory();
+    // final file = File('${directory.path}/audio.mp3');
     await file.writeAsBytes(audioBytes);
     return file;
   }
-
-  // Future<void> saveAudioFile(List<int> audioBytes) async {
-  //   final directory = await getApplicationDocumentsDirectory();
-  //   final file = File('${directory.path}/audio.mp3');
-  //   await file.writeAsBytes(audioBytes);
-  // }
 }
