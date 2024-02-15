@@ -1,13 +1,12 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
-import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:kids_game/resources/svg_pictures.dart';
 
 class LearnWordsScreen extends StatefulWidget {
   const LearnWordsScreen({super.key});
@@ -21,33 +20,15 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
   bool isPlaying = false;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
-  // @override
-  // void initState() {
-  //   audioPlayer.onPlayerStateChanged.listen((state) {
-  //     isPlaying = state == PlayerState.playing;
-  //   });
-  //   audioPlayer.onDurationChanged.listen((event) {
-  //     setState(() {
-  //       duration = event;
-  //     });
-  //   });
-
-  //   audioPlayer.onPositionChanged.listen((event) {
-  //     setState(() {
-  //       position = event;
-  //     });
-  //   });
-  //   super.initState();
-  // }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              end: Alignment.bottomRight)),
+              colors: AppColors.bgColor)),
       child: Scaffold(
           body: SafeArea(
               child: Column(
@@ -72,20 +53,12 @@ class _LearnWordsScreenState extends State<LearnWordsScreen> {
                   height: 337,
                   Images.apple,
                 ),
-<<<<<<< HEAD:lib/presentation/screens/learn_words_screen.dart
-
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: SvgPictures.right,
-                //   iconSize: 50,
-                // ),
-=======
                 IconButton(
                   onPressed: () {},
                   icon: SvgPictures.right,
                   iconSize: 50,
                 ),
->>>>>>> murat-branch:lib/presentation/screen/learn_words_screen.dart
+
               ],
             ),
            ),

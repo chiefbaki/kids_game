@@ -1,15 +1,21 @@
-import 'package:kids_game/resources/resources.dart';
-
 class StoryModel {
-  final String img;
-  final String title;
-  StoryModel({required this.img, required this.title});
-}
+  int? id;
+  String? title;
+  String? image;
 
-class StoryModelList {
-  static List<StoryModel> models = [
-    StoryModel(img: Images.rectangle12, title: "АПЕНДИ ЖАНА ЭШЕК"),
-    StoryModel(img: Images.chicken, title: "МАНСАПКОР КҮЧҮК"),
-    StoryModel(img: Images.body, title: "Аяз ата")
-  ];
+  StoryModel({this.id, this.title, this.image});
+
+  StoryModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
+    image = json['image'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['image'] = image;
+    return data;
+  }
 }

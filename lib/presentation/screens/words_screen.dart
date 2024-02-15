@@ -4,6 +4,7 @@ import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
+import 'package:provider/provider.dart';
 
 
 class WordsScreen extends StatelessWidget {
@@ -29,7 +30,7 @@ class WordsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      context.watch<CharacterInfoProvider>().model!.nameOfCharacter,
+                      Provider.of<CharacterInfoProvider>(context,).model!.nameOfCharacter,
                       style: AppFonts.s40w600
                           .copyWith(color: AppColors.white, shadows: [
                         Shadow(
