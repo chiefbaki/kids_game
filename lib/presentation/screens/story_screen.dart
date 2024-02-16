@@ -46,6 +46,7 @@ class StoryScreen extends StatelessWidget {
                     } else if (state is StoryErrorState) {
                       debugPrint(state.error);
                     } else if (state is StorySuccessState) {
+                      print("Success");
                       return Expanded(
                         child: SizedBox(
                             height: MediaQuery.of(context).size.height * 1,

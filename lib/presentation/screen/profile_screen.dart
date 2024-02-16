@@ -5,7 +5,7 @@ import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/widgets/card_one_main.dart';
 import 'package:kids_game/presentation/widgets/card_two_main.dart';
-import 'package:kids_game/resources/resources.dart';
+
 
 class ProfileScreen extends StatelessWidget {
   // String profilePhoto;

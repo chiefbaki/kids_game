@@ -19,15 +19,17 @@ class ChooseCharacterScreen extends StatelessWidget {
       child: Scaffold(
           body: SafeArea(
               child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.only(left: 35),
         child: Center(
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 40),
-                child: Text(
-                  "КААРМАН ТАНДАНЫЗ",
-                  style: AppFonts.s30w600,
+                child: Center(
+                  child: Text(
+                    "КААРМАН ТАНДАНЫЗ",
+                    style: AppFonts.s30w600,
+                  ),
                 ),
               ),
               Expanded(

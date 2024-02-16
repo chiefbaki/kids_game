@@ -1,11 +1,8 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/domain/repositories/get_audio_repository.dart';
-import 'package:kids_game/presentation/blocs/audio_bloc/audio_bloc.dart';
-import 'package:kids_game/presentation/blocs/audio_bloc/audio_event.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_bloc.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_event.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_state.dart';
@@ -24,6 +21,11 @@ class QuizStoryScreen extends StatefulWidget {
 }
 
 class _QuizStoryScreenState extends State<QuizStoryScreen> {
+  final player = AudioPlayer();
+  Future<void> playAudioFromUrl(String url) async {
+    await player.play(UrlSource('https://example.com/my-audio.wav'));
+  }
+
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<StoryIdBloc>(context).add(GetStoryIdEvent(id: widget.id));
@@ -45,6 +47,7 @@ class _QuizStoryScreenState extends State<QuizStoryScreen> {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is StoryIdSuccessState) {
+                    debugPrint("success");
                     return Column(
                       children: [
                         const CustomTopWidget(
@@ -68,8 +71,6 @@ class _QuizStoryScreenState extends State<QuizStoryScreen> {
                           height: 28,
                         ),
                         PlaySound(onPressed: () async {
-                          BlocProvider.of<AudioBloc>(context)
-                              .add(GetAudioEvent(text: "Эл Аралык Ала-Тоо"));
 
                           // final audioRepository = AudioRepository();
                           // final audioFile = await audioRepository.getAudio();
@@ -80,12 +81,6 @@ class _QuizStoryScreenState extends State<QuizStoryScreen> {
                           //         }).toList();
 
                           // debugPrint('Audio file saved: ${audioFile.path}');
-                          final assetsAudioPlayer = AssetsAudioPlayer();
-
-                          assetsAudioPlayer.open(
-                            Audio("assets/audio/audio.mp3"),
-                          );
-                          
                         }),
                         const SizedBox(
                           height: 28,

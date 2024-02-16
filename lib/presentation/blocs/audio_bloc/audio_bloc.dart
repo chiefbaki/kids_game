@@ -8,7 +8,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
     on<GetAudioEvent>((event, emit) async {
       emit(AudioLoadingState());
       try {
-        await repository.getAudio(text: event.text);
+        await repository.getAudio();
         
         emit(AudioSuccessState());
       } catch (e) {
