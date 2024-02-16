@@ -46,6 +46,7 @@ dependencies:
   path_provider: ^2.0.3
   provider: ^6.1.1
   just_audio: ^0.9.36
+  bloc: ^8.1.3
 
   
   

@@ -1,6 +1,6 @@
 part of 'category_bloc.dart';
 
-@immutable
+
 sealed class CategoryState {}
 
 final class CategoryInitial extends CategoryState {}
@@ -8,7 +8,7 @@ final class CategoryInitial extends CategoryState {}
 final class CategoryLoading extends CategoryState {}
 
 final class CategorySuccess extends CategoryState {
-  final List<CategoryModel> model;
+  List<CategoryModel> model;
   CategorySuccess({required this.model});
 }
 
