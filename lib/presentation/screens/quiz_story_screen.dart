@@ -22,9 +22,6 @@ class QuizStoryScreen extends StatefulWidget {
 
 class _QuizStoryScreenState extends State<QuizStoryScreen> {
   final player = AudioPlayer();
-  Future<void> playAudioFromUrl(String url) async {
-    await player.play(UrlSource('https://example.com/my-audio.wav'));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +68,7 @@ class _QuizStoryScreenState extends State<QuizStoryScreen> {
                           height: 28,
                         ),
                         PlaySound(onPressed: () async {
-
+                          player.play(UrlSource);
                           // final audioRepository = AudioRepository();
                           // final audioFile = await audioRepository.getAudio();
 
