@@ -26,7 +26,9 @@ class StoryScreen extends StatelessWidget {
             body: Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 39),
-                child: Column(children: [
+                child: Column(
+                  
+                  children: [
                   CustomTopWidget(
                       profileName: context
                               .watch<CharacterInfoProvider>()
@@ -41,7 +43,7 @@ class StoryScreen extends StatelessWidget {
                   BlocBuilder<StoryBloc, StoryState>(builder: (context, state) {
                     if (state is StoryLoadingState) {
                       return const Center(
-                        child: CircularProgressIndicator.adaptive(),
+                        child: CircularProgressIndicator(),
                       );
                     } else if (state is StoryErrorState) {
                       debugPrint(state.error);
@@ -53,12 +55,12 @@ class StoryScreen extends StatelessWidget {
                             child: ListView.separated(
                                 itemBuilder: (_, index) {
                                   return StoryCard(
-                                    
-                                    id: state.storyModelList[index].id ?? 0,
+                                      id: state.storyModelList[index].id ?? 0,
                                       title:
-                                          state.storyModelList[index].title ?? "",
-                                              
-                                      img: state.storyModelList[index].image ?? "");
+                                          state.storyModelList[index].title ??
+                                              "",
+                                      img: state.storyModelList[index].image ??
+                                          "");
                                 },
                                 separatorBuilder: (_, index) {
                                   return const SizedBox(height: 41);

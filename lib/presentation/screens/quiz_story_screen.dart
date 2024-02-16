@@ -1,6 +1,6 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:kids_game/core/consts/app_color.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_bloc.dart';
@@ -21,7 +21,13 @@ class QuizStoryScreen extends StatefulWidget {
 }
 
 class _QuizStoryScreenState extends State<QuizStoryScreen> {
-  final player = AudioPlayer();
+  
+  final player = AudioPlayer(); 
+  @override
+  void dispose() {
+    super.dispose();
+    player.stop();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +74,11 @@ class _QuizStoryScreenState extends State<QuizStoryScreen> {
                           height: 28,
                         ),
                         PlaySound(onPressed: () async {
-                          player.play(UrlSource);
+                          // Create a player
+                          final duration = await player.setUrl(// Load a URL
+                              state.model.audio ?? ""); // Schemes: (https: | file: | asset: )
+                          player.play();
+                          debugPrint("success");
                           // final audioRepository = AudioRepository();
                           // final audioFile = await audioRepository.getAudio();
 

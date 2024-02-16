@@ -6,7 +6,7 @@ class GetCategoryRepository {
   final Dio dio;
   GetCategoryRepository({required this.dio});
   Future<List<CategoryModel>> getCategories() async {
-    final Response response = await dio.get("https://4931-217-29-26-50.ngrok-free.app/api/word/category/");
+    final Response response = await dio.get("https://3209-178-217-168-50.ngrok-free.app/api/word/category/");
     List<dynamic> result = response.data;
     debugPrint(response.data);
     return result.map((e) => CategoryModel.fromJson(e)).toList();

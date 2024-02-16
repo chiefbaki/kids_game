@@ -6,7 +6,7 @@ class StoryRepository {
   StoryRepository({required this.dio});
   Future<List<StoryModel>> getStoryModel() async {
     final Response response = await dio
-        .get("https://4931-217-29-26-50.ngrok-free.app/api/story/");
+        .get("https://3209-178-217-168-50.ngrok-free.app/api/story/");
     List<dynamic> list = response.data;
     return list.map((e) => StoryModel.fromJson(e)).toList();
   }
