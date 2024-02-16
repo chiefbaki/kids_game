@@ -1,94 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:kids_game/core/consts/app_color.dart';
-import 'package:kids_game/core/consts/app_fonts.dart';
-import 'package:kids_game/data/model/story_model.dart';
-import 'package:kids_game/presentation/screens/read_story_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kids_game/core/consts/app_colors.dart';
+import 'package:kids_game/data/provider/profile_info.dart';
+import 'package:kids_game/presentation/blocs/story_bloc/story_bloc.dart';
+import 'package:kids_game/presentation/blocs/story_bloc/story_event.dart';
+import 'package:kids_game/presentation/blocs/story_bloc/story_state.dart';
+import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/story_card.dart';
-import 'package:kids_game/resources/resources.dart';
 
 class StoryScreen extends StatelessWidget {
   const StoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<StoryBloc>(context).add(GetStoryEvent());
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-        colors: AppColors.bgColor,
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-      )),
-      child: Scaffold(
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 39),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          colors: AppColors.bgColor,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        )),
+        child: SafeArea(
+          child: Scaffold(
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 39),
+                child: Column(
+                  
                   children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.menu,
-                          size: 57,
-                          color: AppColors.white,
-                          shadows: [
-                            Shadow(
-                                blurRadius: 4,
-                                color: Colors.black.withOpacity(0.35),
-                                offset: const Offset(0, 4))
-                          ],
-                        )),
-                    Text(
-                      "АКТАН",
-                      style: AppFonts.s40w600
-                          .copyWith(color: AppColors.white, shadows: [
-                        Shadow(
-                            blurRadius: 4,
-                            color: Colors.black.withOpacity(0.35),
-                            offset: const Offset(0, 4))
-                      ]),
-                    ),
-                    const CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.transparent,
-                        backgroundImage: AssetImage(
-                          Images.boy,
-                        ))
-                  ],
-                ),
-                Expanded(
-                  child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 1,
-                      child: ListView.separated(
-                          itemBuilder: (_, index) {
-                            return GestureDetector(
-                                onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const ReadStoryScreen())),
-                                child: StoryCard(
-                                  title: StoryModelList.models[index].title,
-                                  img: StoryModelList.models[index].img,
-                                ));
-
-                            // return StoryCard(
-                            //   title: StoryModelList.models[index].title,
-                            //   img: StoryModelList.models[index].img,
-                            // );
-                          },
-                          separatorBuilder: (_, index) {
-                            return const SizedBox(height: 41);
-                          },
-                          itemCount: StoryModelList.models.length)),
-                ),
-              ],
+                  CustomTopWidget(
+                      profileName: context
+                              .watch<CharacterInfoProvider>()
+                              .model
+                              ?.nameOfCharacter ??
+                          "АКТАН",
+                      profilePhoto: context
+                              .watch<CharacterInfoProvider>()
+                              .model
+                              ?.photoOfCharacteForProfile ??
+                          ""),
+                  BlocBuilder<StoryBloc, StoryState>(builder: (context, state) {
+                    if (state is StoryLoadingState) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else if (state is StoryErrorState) {
+                      debugPrint(state.error);
+                    } else if (state is StorySuccessState) {
+                      print("Success");
+                      return Expanded(
+                        child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 1,
+                            child: ListView.separated(
+                                itemBuilder: (_, index) {
+                                  return StoryCard(
+                                      id: state.storyModelList[index].id ?? 0,
+                                      title:
+                                          state.storyModelList[index].title ??
+                                              "",
+                                      img: state.storyModelList[index].image ??
+                                          "");
+                                },
+                                separatorBuilder: (_, index) {
+                                  return const SizedBox(height: 41);
+                                },
+                                itemCount: state.storyModelList.length)),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  })
+                ]),
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

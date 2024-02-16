@@ -10,7 +10,6 @@ class DioSettings {
 
   Dio dio = Dio(
     BaseOptions(
-      // baseUrl: UrlRoutes.hostName,
       contentType: "application/json",
       headers: {
         "Accept": "application/json",

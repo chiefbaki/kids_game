@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/network/dio_settings.dart';
+import 'package:kids_game/data/provider/profile_info.dart';
+import 'package:kids_game/domain/repositories/get_audio_repository.dart';
 import 'package:kids_game/domain/repositories/get_category_repository.dart';
-import 'package:kids_game/presentation/blocs/categorybloc/category_bloc.dart';
+import 'package:kids_game/domain/repositories/get_story_id_repository.dart';
+import 'package:kids_game/domain/repositories/get_story_repository.dart';
+import 'package:kids_game/presentation/blocs/audio_bloc/audio_bloc.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kids_game/presentation/screens/quiz_fruits_screen.dart';
-import 'package:kids_game/presentation/screens/quiz_story_screen.dart';
+import 'package:kids_game/presentation/blocs/category_bloc/category_bloc.dart';
+import 'package:kids_game/presentation/blocs/story_bloc/story_bloc.dart';
+import 'package:kids_game/presentation/blocs/story_id_bloc/story_id_bloc.dart';
+import 'package:kids_game/presentation/screens/splash_screen.dart';
+import 'package:kids_game/presentation/screens/test.dart';
+import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,6 +29,19 @@ class MyApp extends StatelessWidget {
           create: (context) => GetCategoryRepository(
               dio: RepositoryProvider.of<DioSettings>(context).dio),
         ),
+
+        RepositoryProvider(
+          create: (context) => StoryRepository(
+              dio: RepositoryProvider.of<DioSettings>(context).dio),
+        ),
+
+        RepositoryProvider(
+          create: (context) => StoryIdRepository(
+              dio: RepositoryProvider.of<DioSettings>(context).dio),
+        ),
+        RepositoryProvider(
+          create: (context) => AudioRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -28,11 +50,36 @@ class MyApp extends StatelessWidget {
                 repository:
                     RepositoryProvider.of<GetCategoryRepository>(context)),
           ),
+          BlocProvider(
+            create: (context) => StoryBloc(
+                repository:
+                    RepositoryProvider.of<StoryRepository>(context)),
+          ),
+
+          BlocProvider(
+            create: (context) => StoryIdBloc(
+                repository:
+                    RepositoryProvider.of<StoryIdRepository>(context)),
+          ),
+          BlocProvider(
+            create: (context) => AudioBloc(
+                repository:
+                    RepositoryProvider.of<AudioRepository>(context)),
+          ),
+
+          BlocProvider(
+            create: (context) => AudioBloc(
+                repository:
+                    RepositoryProvider.of<AudioRepository>(context)),
+          ),
         ],
-        child: MaterialApp(
-          theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
-          debugShowCheckedModeBanner: false,
-          home: const QuizFruitsScreen(),
+        child: ChangeNotifierProvider(
+          create: (context) => CharacterInfoProvider(),
+          child: MaterialApp(
+            theme: ThemeData(scaffoldBackgroundColor: Colors.transparent),
+            debugShowCheckedModeBanner: false,
+            home: const SplashScreen(),
+          ),
         ),
       ),
     );

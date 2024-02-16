@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kids_game/core/consts/app_colors.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
+import 'package:kids_game/data/provider/profile_info.dart';
 import 'package:kids_game/presentation/widgets/custom_on_top_widget.dart';
 import 'package:kids_game/presentation/widgets/play_sound_widget.dart';
 import 'package:kids_game/resources/resources.dart';
@@ -21,10 +23,11 @@ class ReadStoryScreen extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              const Padding(
+               Padding(
                 padding: EdgeInsets.only(bottom: 20),
                 child: CustomTopWidget(
-                    profileName: "АКТАН", profilePhoto: Images.boy),
+                    profileName: context.watch<CharacterInfoProvider>().model!.nameOfCharacter
+                    , profilePhoto: context.watch<CharacterInfoProvider>().model!.photoOfCharacteForProfile),
               ),
               Expanded(
                   child: SingleChildScrollView(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/consts/app_fonts.dart';
 
-
 class CharacterCard extends StatelessWidget {
   const CharacterCard(
       {super.key,

@@ -52,7 +52,8 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(
                   height: 39,
                 ),
-                const CardTwoMainScreen()
+                const CardTwoMainScreen(),
+                
               ])),
         ),
       ),

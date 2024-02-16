@@ -14,7 +14,10 @@ class CardOneMainScreen extends StatelessWidget {
     return Stack(
       children: [
         InkWell(
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const WordsScreen())),
+          onTap: (){
+            print("words");
+            Navigator.push(context, MaterialPageRoute(builder: (context) => WordsScreen()));
+          },
           child: Container(
             width: 350,
             height: 200,
