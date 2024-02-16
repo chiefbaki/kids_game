@@ -3,8 +3,6 @@ PODS:
     - Flutter
   - assets_audio_player_web (0.0.1):
     - Flutter
-  - audioplayers (0.0.1):
-    - Flutter
   - Flutter (1.0.0)
   - path_provider_foundation (0.0.1):
     - Flutter
@@ -13,7 +11,6 @@ PODS:
 DEPENDENCIES:
   - assets_audio_player (from `.symlinks/plugins/assets_audio_player/ios`)
   - assets_audio_player_web (from `.symlinks/plugins/assets_audio_player_web/ios`)
-  - audioplayers (from `.symlinks/plugins/audioplayers/ios`)
   - Flutter (from `Flutter`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
 
@@ -22,8 +19,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/assets_audio_player/ios"
   assets_audio_player_web:
     :path: ".symlinks/plugins/assets_audio_player_web/ios"
-  audioplayers:
-    :path: ".symlinks/plugins/audioplayers/ios"
   Flutter:
     :path: Flutter
   path_provider_foundation:
@@ -32,7 +27,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   assets_audio_player: edee322b9cb625571b830b35872ead1a295fd917
   assets_audio_player_web: 19826380c44375761aa0b9053665c1e3fbc3b86b
-  audioplayers: 455322b54050b30ea4b1af7cd9e9d105f74efa8c
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
 

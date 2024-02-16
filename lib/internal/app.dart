@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kids_game/core/network/dio_settings.dart';
 import 'package:kids_game/data/provider/profile_info.dart';
-import 'package:kids_game/domain/repositories/audio_repository.dart';
+import 'package:kids_game/domain/repositories/get_audio_repository.dart';
 import 'package:kids_game/domain/repositories/get_category_repository.dart';
 import 'package:kids_game/domain/repositories/get_story_id_repository.dart';
 import 'package:kids_game/domain/repositories/get_story_repository.dart';

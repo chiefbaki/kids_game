@@ -7,7 +7,7 @@ class StoryIdRepository {
 
   Future<StoryIdModel> getStoryidModel({required int id}) async {
     final Response response = await dio
-        .get("https://d02d-77-235-29-191.ngrok-free.app/api/story/story/$id");
+        .get("https://4931-217-29-26-50.ngrok-free.app/api/story/story/$id");
     return StoryIdModel.fromJson(response.data);
   }
 }
